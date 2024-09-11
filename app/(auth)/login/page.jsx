@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -8,33 +9,6 @@ function LoginPage() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   setError(null); // Reset any previous errors
-
-  //   try {
-  //     const res = await fetch("/api/login", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ email, password }),
-  //     });
-
-  //     if (!res.ok) {
-  //       const errorData = await res.json();
-  //       setError(errorData.error || "Login failed");
-  //       return;
-  //     }
-
-  //     // If the login is successful, redirect to a dashboard or home page
-  //     setSuccess(true);
-  //     router.push("/dashboard"); // Redirect to the dashboard or home page
-  //   } catch (error) {
-  //     setError("Something went wrong. Please try again.");
-  //   }
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -99,7 +73,12 @@ function LoginPage() {
           </div>
         </form>
         <div>
-          <h1></h1>
+          <h5 className="text-white py-2">
+            didn't have an account?{" "}
+            <Link href={"/register"} className="text-rose-500">
+              Create one
+            </Link>
+          </h5>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         {success && <p style={{ color: "green" }}>Registration successful!</p>}

@@ -1,14 +1,8 @@
-// import React from "react";
-
-// function RegisterPage() {
-//   return <div>RegisterPage</div>;
-// }
-
-// export default RegisterPage;
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // For Next.js 13+
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -37,7 +31,7 @@ export default function RegisterPage() {
       }
 
       // On successful registration, redirect to login or another page
-      router.push("/login"); // Redirect to the login page
+      router.push("/login");
     } catch (error) {
       setError("Something went wrong. Please try again.");
     }
@@ -77,6 +71,14 @@ export default function RegisterPage() {
             />
           </div>
         </form>
+        <div>
+          <h5 className="text-white py-2">
+            Already have an account?{" "}
+            <Link href={"/login"} className="text-rose-500">
+              Login Here
+            </Link>
+          </h5>
+        </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         {success && <p style={{ color: "green" }}>Registration successful!</p>}
       </div>

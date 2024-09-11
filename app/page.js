@@ -1,24 +1,3 @@
-// import clientPromise from '@/lib/mongodb';
-
-// export default async function UsersPage() {
-//   // Fetch data from MongoDB
-//   const client = await clientPromise;
-//   const db = client.db('notes');
-//   const users = await db.collection('user-notes-collection').find({}).toArray();
-//   console.log(users)
-
-//   return (
-//     <div>
-//       <h1>Users</h1>
-//       <ul>
-//         {users.map(user => (
-//           <li key={user._id}>{user.name}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
