@@ -74,7 +74,7 @@ function LoginPage() {
         </form>
         <div>
           <h5 className="text-white py-2">
-            didn't have an account?{" "}
+            didnt have an account?
             <Link href={"/register"} className="text-rose-500">
               Create one
             </Link>
