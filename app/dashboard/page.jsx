@@ -133,13 +133,13 @@ const Dashboard = () => {
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
             <div className="relative">
-              <button className="focus:outline-none">
+              {/* <button className="focus:outline-none">
                 <img
                   className="w-10 h-10 rounded-full border border-gray-300"
                   src="https://via.placeholder.com/40"
                   alt="Profile"
                 />
-              </button>
+              </button> */}
             </div>
           </div>
         </header>

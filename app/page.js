@@ -15,12 +15,12 @@ function NotesDashboard() {
 
         <div className="flex gap-5">
           <Link href={"/login"}>
-            <button class="bg-gradient-to-r from-rose-600 to-pink-500 text-white font-bold py-1 px-4 rounded shadow-lg transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
+            <button className="bg-gradient-to-r from-rose-600 to-pink-500 text-white font-bold py-1 px-4 rounded shadow-lg transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
               Login
             </button>
           </Link>
           <Link href={"/register"}>
-            <button class="bg-gradient-to-r from-rose-600 to-pink-500 text-white font-bold py-1 px-4 rounded shadow-lg transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
+            <button className="bg-gradient-to-r from-rose-600 to-pink-500 text-white font-bold py-1 px-4 rounded shadow-lg transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out">
               Register
             </button>
           </Link>
@@ -29,9 +29,9 @@ function NotesDashboard() {
 
       <div style={{ height: "calc(100vh - 80px)" }} className="w-full flex items-center justify-center flex-col gap-5">
 
-        <div class="flex gap-4">
+        <div className="flex gap-4">
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -41,14 +41,14 @@ function NotesDashboard() {
 
             />
             <label
-              for="I"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="I"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               I
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -57,14 +57,14 @@ function NotesDashboard() {
               value="C"
             />
             <label
-              for="C"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="C"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               C
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -73,14 +73,14 @@ function NotesDashboard() {
               value="E"
             />
             <label
-              for="E"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="E"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               E
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -89,14 +89,14 @@ function NotesDashboard() {
               value="B"
             />
             <label
-              for="B"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="B"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               B
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -105,14 +105,14 @@ function NotesDashboard() {
               value="I"
             />
             <label
-              for="I2"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="I2"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               I
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -121,14 +121,14 @@ function NotesDashboard() {
               value="T"
             />
             <label
-              for="T"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="T"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               T
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -137,14 +137,14 @@ function NotesDashboard() {
               value="'"
             />
             <label
-              for="des"
-              class="px-1 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-8 h-10  lg:h-14"
+              htmlFor="des"
+              className="px-1 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-8 h-10  lg:h-14"
             >
-              '
+              &apos;
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -153,8 +153,8 @@ function NotesDashboard() {
               value="S"
             />
             <label
-              for="S"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="S"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               S
             </label>
@@ -162,9 +162,9 @@ function NotesDashboard() {
 
         </div>
 
-        <div class="flex gap-4">
+        <div className="flex gap-4">
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -174,14 +174,14 @@ function NotesDashboard() {
 
             />
             <label
-              for="B1"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="B1"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               N
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -190,14 +190,14 @@ function NotesDashboard() {
               value="O"
             />
             <label
-              for="C1"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="C1"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               O
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -206,14 +206,14 @@ function NotesDashboard() {
               value="T"
             />
             <label
-              for="D1"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="D1"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               T
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -222,8 +222,8 @@ function NotesDashboard() {
               value="E"
             />
             <label
-              for="E1"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="E1"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               E
             </label>
@@ -232,9 +232,9 @@ function NotesDashboard() {
         </div>
 
 
-        <div class="flex gap-4">
+        <div className="flex gap-4">
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -244,14 +244,14 @@ function NotesDashboard() {
 
             />
             <label
-              for="A"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="A"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               A
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -260,14 +260,14 @@ function NotesDashboard() {
               value="P"
             />
             <label
-              for="P"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="P"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               P
             </label>
           </div>
 
-          <div class="inline-block radio">
+          <div className="inline-block radio">
             <input
               name="answer"
               type="radio"
@@ -276,8 +276,8 @@ function NotesDashboard() {
               value="P"
             />
             <label
-              for="P2"
-              class="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
+              htmlFor="P2"
+              className="px-2 py-1 rounded-lg flex justify-center items-center text-3xl lg:text-5xl font-bold w-10 h-10 lg:w-14 lg:h-14"
             >
               P
             </label>

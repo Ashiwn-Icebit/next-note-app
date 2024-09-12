@@ -118,6 +118,6 @@ export async function DELETE(request) {
     }
 }
 
-export const config = {
-    runtime: 'edge',
-};
+// export const config = {
+//     runtime: 'edge',
+// };
