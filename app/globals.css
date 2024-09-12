@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.radio input ~ label {
+    background-color: rgb(233, 225, 225);
+    color: rgb(158, 146, 146);
+  }
+  .radio input:checked ~ label {
+    background-color: rgb(225 29 72);
+    color: white;
+  }

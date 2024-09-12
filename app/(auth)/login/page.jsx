@@ -32,7 +32,7 @@ function LoginPage() {
       localStorage.setItem("userEmail", email);
 
       setSuccess(true);
-      router.push("/"); // Redirect to the dashboard
+      router.push("/dashboard"); // Redirect to the dashboard
     } catch (error) {
       setError("Something went wrong. Please try again.");
     }
@@ -74,7 +74,7 @@ function LoginPage() {
         </form>
         <div>
           <h5 className="text-white py-2">
-            didnt have an account?
+            didnt have an account?{" "}
             <Link href={"/register"} className="text-rose-500">
               Create one
             </Link>
