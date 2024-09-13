@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import SlideInNotifications from "@/components/SlideInNotifications/SlideInNotifications";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [notifications, setNotifications] = useState([]);
   const router = useRouter();
 
   const handleSubmit = async (event) => {
@@ -30,57 +32,77 @@ export default function RegisterPage() {
         return;
       }
 
-      // On successful registration, redirect to login or another page
-      router.push("/login");
+      // Trigger notification and set success
+      setNotifications([{ id: Date.now(), text: "Registration successful!" }]);
+      setSuccess(true);
+
+      // Wait for 1 second, then redirect to login page
+      setTimeout(() => {
+        router.push("/login");
+      }, 3000);
     } catch (error) {
       setError("Something went wrong. Please try again.");
     }
   };
+
   return (
-    <div className="mx-auto h-screen bg-slate-900 flex items-center justify-center">
-      <div className="w-full max-w-md p-8 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg">
-        <h1 className="text-white text-2xl font-bold mb-6 text-center">
-          Create Your Account
-        </h1>
-        <form onSubmit={handleSubmit} className="bg-yellow-100 p-6">
-          <div className="mb-4">
-            <input
-              type="email"
-              className="bg-gray-50 bg-opacity-40 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="Enter Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+    <div className="w-full h-screen relative overflow-hidden z-10 bg-gray-800 p-8">
+      <SlideInNotifications notifications={notifications} setNotifications={setNotifications} /> {/* Add Notification component */}
+
+      <div className="flex items-start mt-[200px] justify-center h-screen relative">
+        <div className="w-1/4">
+          <h2 className="text-2xl font-bold text-white mb-6">Create Your Account</h2>
+
+          <form method="post" onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-300" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                type="email"
+                placeholder="Enter Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-300" htmlFor="password">
+                Password
+              </label>
+              <input
+                className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                type="password"
+                placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="flex justify-end">
+              <button
+                className="w-full mt-3 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+                type="submit"
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
+
+          <div className="mt-1">
+            <h5 className="text-white py-2">
+              Already have an account?{" "}
+              <Link href="/login" className="text-white pl-1 font-bold">
+                Login Here
+              </Link>
+            </h5>
           </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              className="bg-gray-50 bg-opacity-40 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="Enter Your Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="submit"
-              className="bg-blue-500 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-pointer hover:bg-blue-600"
-              value="Create Account"
-            />
-          </div>
-        </form>
-        <div>
-          <h5 className="text-white py-2">
-            Already have an account?{" "}
-            <Link href={"/login"} className="text-rose-500">
-              Login Here
-            </Link>
-          </h5>
+
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>Registration successful!</p>}
       </div>
     </div>
   );
