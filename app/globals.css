@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,4 +10,7 @@
   .radio input:checked ~ label {
     background-color: rgb(225 29 72);
     color: white;
+  }
+  .custom-font {
+    font-family: "Playwrite CU", cursive;
   }

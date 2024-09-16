@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/Button/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -40,13 +41,11 @@ function LoginPage() {
 
   return (
     <div
-      className="w-full h-screen relative overflow-hidden z-10 bg-gray-800 p-8 before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      className="w-full h-screen relative overflow-hidden z-10 bg-gray-800 p-4 sm:p-8 before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
     >
-      <div className="flex items-start mt-[200px] justify-center h-screen relavive before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-1/2 after:-right-200">
-
-        <div className="w-1/4">
-
-          <h2 className="text-2xl font-bold text-white mb-6">Login</h2>
+      <div className="flex items-start mt-[150px] justify-center h-full relative">
+        <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">Login</h2>
 
           <form method="post" onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -78,19 +77,27 @@ function LoginPage() {
             </div>
 
             <div className="flex justify-end">
-              <button
+              {/* <button
                 className="w-full mt-3 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
                 type="submit"
                 value="Login"
               >
                 Login
-              </button>
+              </button> */}
+
+              <Button
+                className="w-full mt-3 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+                value="Login"
+                type="submit"
+              // onClick={() => console.log('Login!')}
+              />
+
             </div>
           </form>
 
-          <div className="mt-1">
+          <div className="mt-4">
             <h5 className="text-white py-2">
-              didnt have an account?{" "}
+              Don't have an account?{" "}
               <Link href={"/register"} className="text-white pl-1 font-bold">
                 Create one
               </Link>
@@ -98,7 +105,6 @@ function LoginPage() {
           </div>
           {error && <p style={{ color: "red" }}>{error}</p>}
           {success && <p style={{ color: "green" }}>Registration successful!</p>}
-
         </div>
       </div>
     </div>

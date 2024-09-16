@@ -49,8 +49,9 @@ export default function RegisterPage() {
     <div className="w-full h-screen relative overflow-hidden z-10 bg-gray-800 p-8">
       <SlideInNotifications notifications={notifications} setNotifications={setNotifications} /> {/* Add Notification component */}
 
-      <div className="flex items-start mt-[200px] justify-center h-screen relative">
-        <div className="w-1/4">
+      <div className="flex items-start mt-[150px] justify-center h-screen relative">
+        {/* <div className="w-1/4"> */}
+        <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4">
           <h2 className="text-2xl font-bold text-white mb-6">Create Your Account</h2>
 
           <form method="post" onSubmit={handleSubmit}>
@@ -83,12 +84,20 @@ export default function RegisterPage() {
             </div>
 
             <div className="flex justify-end">
-              <button
+              {/* <button
                 className="w-full mt-3 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
                 type="submit"
               >
                 Sign Up
-              </button>
+              </button> */}
+
+              <Button
+                className="w-full mt-3 bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+                value="Sign Up"
+                type="submit"
+              // onClick={() => console.log('Sign up!')}
+              />
+
             </div>
           </form>
 
