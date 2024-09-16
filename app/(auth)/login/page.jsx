@@ -104,7 +104,7 @@ function LoginPage() {
             </h5>
           </div>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          {success && <p style={{ color: "green" }}>Registration successful!</p>}
+          {success && <p style={{ color: "green" }}>Login successfully!</p>}
         </div>
       </div>
     </div>

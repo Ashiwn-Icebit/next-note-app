@@ -1,13 +1,18 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { RiPencilLine } from "react-icons/ri";
 import Button from "@/components/Button/Button";
 import NoteCard from "@/components/NoteCard/NoteCard";
 
 const Dashboard = () => {
   const router = useRouter();
+  const [noteTitle, setNoteTitle] = useState("");
+  const [noteContent, setNoteContent] = useState("");
+  const [notes, setNotes] = useState([]);
+
+  // console.log("🚀 ~ Dashboard ~ notes:", notes)
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -16,6 +21,7 @@ const Dashboard = () => {
     }
   }, [router]);
 
+  // Logout Fuction
   const handleLogout = () => {
     // Clear JWT token from local storage
     localStorage.removeItem("token");
@@ -34,10 +40,14 @@ const Dashboard = () => {
   const onDelete = () => {
     console.log("Delete Button clicked")
   }
-  const handleSubmit = () => {
-    console.log("Note Submitted")
-  }
 
+  const handleSubmit = () => {
+    const payload = {
+      title: noteTitle,
+      content: noteContent,
+    };
+    console.log("Note Submitted", payload);
+  }
 
 
   return (
@@ -59,21 +69,48 @@ const Dashboard = () => {
       <main className="p-4">
 
         <div>
-          <input type="text" name="noteTitle" placeholder="Title" />
-          <input type="text" name="noteContent" placeholder="Text" />
+
+          <input
+            type="text"
+            name="noteTitle"
+            placeholder="Title"
+            value={noteTitle}
+            onChange={(e) => setNoteTitle(e.target.value)}
+          />
+
+          <input
+            type="text"
+            name="noteContent"
+            placeholder="Text"
+            value={noteContent}
+            onChange={(e) => setNoteContent(e.target.value)}
+          />
+
           <Button
             className="bg-slate-400 px-3 py-1 mr-2"
             value="Save"
             onClick={handleSubmit}
           />
+
         </div>
 
-        <NoteCard
+        {/* Reusable note card component */}
+        {/* <NoteCard
           noteTitle={"noteTitle"}
           noteContent={"noteContent"}
           onEdit={onEdit}
           onDelete={onDelete}
-        />
+        /> */}
+
+        {notes.map(note => (
+          <NoteCard
+            key={note._id}
+            noteTitle={note.noteTitle}
+            noteContent={note.noteText}
+            onEdit={() => console.log("Edit Button clicked")}
+            onDelete={() => handleDelete(note._id)}
+          />
+        ))}
 
       </main>
 
