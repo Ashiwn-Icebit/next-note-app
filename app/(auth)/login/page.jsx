@@ -97,7 +97,7 @@ function LoginPage() {
 
           <div className="mt-4">
             <h5 className="text-white py-2">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link href={"/register"} className="text-white pl-1 font-bold">
                 Create one
               </Link>
