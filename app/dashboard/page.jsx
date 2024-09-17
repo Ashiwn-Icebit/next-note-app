@@ -1,10 +1,12 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RiPencilLine } from "react-icons/ri";
 import Button from "@/components/Button/Button";
 import NoteCard from "@/components/NoteCard/NoteCard";
+import withAuth from "@/components/AuthGuard/WithAuth";
+
 
 const Dashboard = () => {
   const router = useRouter();
@@ -111,7 +113,6 @@ const Dashboard = () => {
         });
 
         if (response.ok) {
-          console.log("Note created successfully");
         } else {
           const errorData = await response.json();
           console.error("Error creating note:", errorData.error);
@@ -146,6 +147,7 @@ const Dashboard = () => {
     setNoteContent(note.noteText); // Pre-fill the content field
     setEditingNoteId(note._id); // Set the note ID for editing
   };
+
   // Delete note function
   const handleDelete = async (noteId) => {
     try {
@@ -189,7 +191,7 @@ const Dashboard = () => {
           <input
             type="text"
             name="noteTitle"
-            placeholder="Title"
+            placeholder="Enter Your Note Title"
             value={noteTitle}
             onChange={(e) => setNoteTitle(e.target.value)}
           />
@@ -197,7 +199,7 @@ const Dashboard = () => {
           <input
             type="text"
             name="noteContent"
-            placeholder="Text"
+            placeholder="Enter Your Note Content"
             value={noteContent}
             onChange={(e) => setNoteContent(e.target.value)}
           />
@@ -226,4 +228,5 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+// export default Dashboard;
+export default withAuth(Dashboard);

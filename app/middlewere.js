@@ -1,34 +1,29 @@
-import { NextResponse } from 'next/server';
-import jwt from 'jsonwebtoken';
+// import { NextResponse } from 'next/server';
 
-export function middleware(req) {
-    const token = req.cookies.get('token'); // Extract token from cookies
-    const url = req.nextUrl.clone();
+// export function middleware(request) {
+//     // Get the token from cookies (or localStorage in a client-side check)
+//     const token = request.cookies.get('token')?.value;
 
-    // Check if the token is present
-    if (token) {
-        try {
-            // Verify the token
-            jwt.verify(token, process.env.JWT_SECRET);
+//     const publicRoutes = ['/login', '/register', '/'];
 
-            // Redirect authenticated users away from login and register pages
-            if (url.pathname === '/login' || url.pathname === '/register') {
-                return NextResponse.redirect(new URL('/dashboard', req.url));
-            }
-        } catch (error) {
-            // Handle token verification errors
-            console.error('Token verification failed:', error);
-        }
-    } else {
-        // Redirect unauthenticated users to login/register if they try to access protected pages
-        if (url.pathname === '/dashboard' || url.pathname.startsWith('/dashboard/')) {
-            return NextResponse.redirect(new URL('/login', req.url));
-        }
-    }
+//     const { pathname } = request.nextUrl;
 
-    return NextResponse.next();
-}
+//     // Allow access to public routes
+//     if (publicRoutes.includes(pathname)) {
+//         return NextResponse.next();
+//     }
 
-export const config = {
-    matcher: ['/login', '/register', '/dashboard/:path*'], // Apply middleware to specific routes
-};
+//     // If the token is not available, redirect to login
+//     if (!token) {
+//         const loginUrl = new URL('/login', request.url);
+//         return NextResponse.redirect(loginUrl);
+//     }
+
+//     // If token exists, continue to the requested route
+//     return NextResponse.next();
+// }
+
+// // Apply middleware to all routes
+// export const config = {
+//     matcher: ['/((?!_next|favicon.ico).*)'],
+// };
