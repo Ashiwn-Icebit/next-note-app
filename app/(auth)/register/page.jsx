@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import SlideInNotifications from "@/components/SlideInNotifications/SlideInNotifications";
+import Button from "@/components/Button/Button";
+
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
